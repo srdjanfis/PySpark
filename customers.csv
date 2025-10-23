@@ -1,0 +1,11 @@
+customer_id,first_name,last_name,age,city,signup_date
+1,John,Doe,28,New York,2023-01-15
+2,Jane,Smith,34,Los Angeles,2023-02-20
+3,Bob,Johnson,45,Chicago,2023-03-10
+4,Alice,Williams,29,Houston,2023-04-05
+5,Charlie,Brown,52,Phoenix,2023-05-12
+6,Diana,Davis,31,Philadelphia,2023-06-18
+7,Eve,Miller,26,San Antonio,2023-07-22
+8,Frank,Wilson,38,San Diego,2023-08-30
+9,Grace,Moore,41,Dallas,2023-09-14
+10,Henry,Taylor,33,San Jose,2023-10-25
