@@ -1,0 +1,23 @@
+[
+  {
+    "order_id": 1001,
+    "customer": {"customer_id": 501, "name": "Ana Kovač", "email": "ana@example.com"},
+    "items": [{"product_id": 1, "quantity": 1}, {"product_id": 3, "quantity": 2}],
+    "order_date": "2024-11-15",
+    "total_amount": 949.99
+  },
+  {
+    "order_id": 1002,
+    "customer": {"customer_id": 502, "name": "Marko Novak", "email": "marko@example.com"},
+    "items": [{"product_id": 2, "quantity": 2}],
+    "order_date": "2024-10-28",
+    "total_amount": 91.00
+  },
+  {
+    "order_id": 1003,
+    "customer": {"customer_id": 503, "name": "Petra Horvat", "email": "petra@example.com"},
+    "items": [{"product_id": 5, "quantity": 1}, {"product_id": 6, "quantity": 1}],
+    "order_date": "2024-11-20",
+    "total_amount": 419.99
+  }
+]
