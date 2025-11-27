@@ -1,0 +1,8 @@
+product_id,product_name,category,price,stock_quantity
+1,Laptop Dell XPS,Electronics,899.99,5
+2,Python Programming Book,Books,45.50,15
+3,Wireless Mouse,Electronics,25.00,50
+4,Data Science Handbook,Books,60.00,8
+5,Monitor Samsung 27,Electronics,299.99,12
+6,Keyboard Mechanical,Electronics,120.00,3
+7,SQL for Beginners,Books,35.00,20
