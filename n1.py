@@ -30,9 +30,9 @@ print("\nSamodejno zaznana shema:")
 products_auto.printSchema()
 
 # ============================================================================
-# Naloga 1b: Nalaganje products.csv sa ročno določeno šemo
+# Naloga 1b: Nalaganje products.csv sa ročno določeno shemo
 # ============================================================================
-print("\n1b) Nalaganje products.csv sa ročno določeno šemo:")
+print("\n1b) Nalaganje products.csv sa ročno določeno shemo:")
 
 products_schema = StructType([
     StructField("product_id", IntegerType(), nullable=False),
@@ -59,7 +59,7 @@ products.show()
 # ============================================================================
 print("\n1c) Nalaganje orders.json:")
 
-orders = spark.read.json("orders.json")
+orders = spark.read.json("orders.json", multiLine=True)
 
 print("\nPodatki iz JSON-a:")
 orders.show(truncate=False)
