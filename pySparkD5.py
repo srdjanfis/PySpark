@@ -51,7 +51,7 @@ from pyspark.sql.functions import col
 print("\nMethod 2: Using col().getField():")
 posts.select(
     col("post_id"),
-    col("user").getField("username").alias("username"),
+    col("user").getField("username").alias("uname"),
     col("user").getField("verified").alias("verified"),
     col("engagement").getField("likes").alias("likes")
 ).show()

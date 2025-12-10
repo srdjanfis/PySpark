@@ -82,11 +82,11 @@ orders_selected.show(truncate=False)
 # ============================================================================
 # Naloga 2d: Filtriranje naročil
 # ============================================================================
-print("\n2d) Filtriranje naročil (total_amount > 100 IN order_date > 2024-11-01):")
+print("\n2d) Filtriranje naročil (total_amount > 100 IN order_date > 2024-11-16):")
 
 filtered_orders = orders_selected.filter(
     (col("total_amount") > 100) &
-    (col("order_date") > "2024-11-01")
+    (col("order_date") > "2024-11-16")
 )
 
 filtered_orders.show(truncate=False)

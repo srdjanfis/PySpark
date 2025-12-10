@@ -37,7 +37,7 @@ print(subject_grades.collect())
 # PROBLEM: reduceByKey lahko samo sešteva, ne more neposredno izračunati povprečja
 # REŠITEV: Mapiramo na (predmet, (ocena, 1)), da shranimo tudi število ocen
 
-subject_grade_counts = rdd.map(lambda x: (x[1], (x[2], 1)))
+subject_grade_counts = subject_grades.map(lambda x: (x[0], (x[1], 1)))
 
 print("\n=== MAP: (predmet, (ocena, število)) ===")
 print(subject_grade_counts.collect())

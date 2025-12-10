@@ -58,6 +58,7 @@ customers_explicit = spark.read \
 
 print("Schema with explicit definition:")
 customers_explicit.printSchema()
+customers_explicit.show()
 
 print("\nKey differences:")
 print("- Explicit schema is faster (no need to scan data)")

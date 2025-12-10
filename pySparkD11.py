@@ -135,8 +135,7 @@ overall_stats.select(
 print("\n--- Additional Metrics ---")
 transactions.agg(
     F.stddev("amount").alias("std_deviation"),
-    F.variance("amount").alias("variance"),
-    F.approx_count_distinct("customer_id").alias("approx_unique_customers")
+    F.variance("amount").alias("variance")
 ).show()
 
 print("\n💡 Key Takeaways:")

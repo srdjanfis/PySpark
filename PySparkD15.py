@@ -42,7 +42,7 @@ for ip, count in ip_counts.sortBy(lambda x: x[1], ascending=False).collect():
     print(f"{ip}: {count} zahtev")
 
 # ============================================
-# NALOGA 2: Čas odziva po URL-ju
+# NALOGA 2: Povprečni čas odziva po URL-ju
 # ============================================
 
 # MAP: (URL, (čas_odziva, 1))
