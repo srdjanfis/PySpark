@@ -42,7 +42,7 @@ for ip, count in ip_counts.sortBy(lambda x: x[1], ascending=False).collect():
     print(f"{ip}: {count} zahtev")
 
 # ============================================
-# NALOGA 2: Povprečni čas odziva po URL-ju
+# NALOGA 2: Čas odziva po URL-ju
 # ============================================
 
 # MAP: (URL, (čas_odziva, 1))
@@ -84,17 +84,5 @@ print("\n=== PORAZDELITEV STATUSNIH KOD ===")
 for category, count in error_counts.collect():
     print(f"{category}: {count}")
 
-# ============================================
-# NALOGA 4: Top 3 najpočasnejše končne točke (endpoint-i)
-# ============================================
-
-slow_endpoints = rdd.map(lambda log: log.split(",")) \
-                   .map(lambda parts: (parts[3], int(parts[5]))) \
-                   .sortBy(lambda x: x[1], ascending=False) \
-                   .take(3)
-
-print("\n=== TOP 3 NAJPOČASNEJŠE ZAHTEVE ===")
-for url, time in slow_endpoints:
-    print(f"{url}: {time} ms")
 
 spark.stop()
