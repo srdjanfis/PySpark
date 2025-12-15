@@ -23,8 +23,8 @@ assembler = VectorAssembler(
     outputCol="features"
 )
 data = assembler.transform(data)
-
-train, test = data.randomSplit([0.7, 0.3], seed=42)
+data.show()
+train, test = data.randomSplit([0.85, 0.15], seed=42)
 
 lr = LogisticRegression(featuresCol="features", labelCol="opravil")
 model = lr.fit(train)

@@ -26,7 +26,7 @@ data = assembler.transform(data)
 data.show(truncate=False)
 
 # Split na train/test
-train, test = data.randomSplit([0.8, 0.2], seed=42)
+train, test = data.randomSplit([0.85, 0.15], seed=42)
 
 # Treniraj model
 lr = LinearRegression(featuresCol="features", labelCol="cena")
