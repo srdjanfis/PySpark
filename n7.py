@@ -23,7 +23,7 @@ assembler = VectorAssembler(
     outputCol="features"
 )
 data = assembler.transform(data)
-
+data.show()
 train, test = data.randomSplit([0.8, 0.2], seed=42)
 
 # Decision Tree
@@ -33,10 +33,11 @@ dt_pred = dt_model.transform(test)
 dt_pred.show()
 
 # Random Forest
-rf = RandomForestClassifier(featuresCol="features", labelCol="bolezen", numTrees=20)
+rf = RandomForestClassifier(featuresCol="features", labelCol="bolezen", numTrees=120, maxDepth=15)
 rf_model = rf.fit(train)
 rf_pred = rf_model.transform(test)
 rf_pred.show()
+
 evaluator = MulticlassClassificationEvaluator(
     labelCol="bolezen",
     predictionCol="prediction",

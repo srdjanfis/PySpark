@@ -43,20 +43,20 @@ data = spark.createDataFrame([
 # Kategorične feature-je v številke
 indexer = StringIndexer(inputCol="zgodovina", outputCol="zgodovina_idx")
 data = indexer.fit(data).transform(data)
-
+data.show()
 assembler = VectorAssembler(
     inputCols=["starost", "dohodek", "zgodovina_idx"],
     outputCol="features"
 )
 data = assembler.transform(data)
-
-train, test = data.randomSplit([0.85, 0.15], seed=42)
+data.show()
+train, test = data.randomSplit([0.85, 0.15], seed=55)
 
 rf = RandomForestClassifier(
     featuresCol="features",
     labelCol="odobren",
-    numTrees=10,
-    maxDepth=5
+    numTrees=100,
+    maxDepth=10
 )
 model = rf.fit(train)
 

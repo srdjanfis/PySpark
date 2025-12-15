@@ -23,8 +23,8 @@ assembler = VectorAssembler(
     outputCol="features"
 )
 data = assembler.transform(data)
-
-train, test = data.randomSplit([0.7, 0.3], seed=123)
+data.show()
+train, test = data.randomSplit([0.80, 0.2], seed=123)
 
 lr = LinearRegression(featuresCol="features", labelCol="placa")
 model = lr.fit(train)

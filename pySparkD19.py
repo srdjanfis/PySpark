@@ -40,9 +40,10 @@ df = assembler.transform(df)
 # Normalizacija
 scaler = StandardScaler(inputCol="features_raw", outputCol="features")
 df = scaler.fit(df).transform(df)
+df.show()
 
 # K-Means
-kmeans = KMeans(k=3, seed=42)
+kmeans = KMeans(k=2)
 model = kmeans.fit(df)
 
 # Predikcije

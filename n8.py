@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.ml.feature import VectorAssembler, StandardScaler
+from pyspark.ml.feature import VectorAssembler, StandardScaler, MinMaxScaler
 from pyspark.ml.clustering import KMeans
 import matplotlib.pyplot as plt
 
@@ -34,11 +34,12 @@ assembler = VectorAssembler(
 data = assembler.transform(data)
 
 # Normalizacija
-scaler = StandardScaler(inputCol="features_raw", outputCol="features")
+scaler = MinMaxScaler(inputCol="features_raw", outputCol="features")
 data = scaler.fit(data).transform(data)
+data.show(truncate=False)
 
 # K-Means model
-kmeans = KMeans(k=3, seed=42)
+kmeans = KMeans(k=2, seed=42)
 model = kmeans.fit(data)
 
 # Napovedi
@@ -64,7 +65,7 @@ fig.suptitle('K-Means Clustering (k=3)', fontsize=16, fontweight='bold')
 colors = ['#FF6B6B', '#4ECDC4', '#45B7D1']
 
 # Graf 1: Starost vs Dohodek
-for i in range(3):
+for i in range(2):
     cluster = df_pandas[df_pandas['prediction'] == i]
     axes[0].scatter(cluster['starost'], cluster['dohodek'],
                     c=colors[i], label=f'Klaster {i}', s=150, alpha=0.7, edgecolors='black')
@@ -76,7 +77,7 @@ axes[0].legend()
 axes[0].grid(True, alpha=0.3)
 
 # Graf 2: Nakupi vs Dohodek
-for i in range(3):
+for i in range(2):
     cluster = df_pandas[df_pandas['prediction'] == i]
     axes[1].scatter(cluster['nakupi'], cluster['dohodek'],
                     c=colors[i], label=f'Klaster {i}', s=150, alpha=0.7, edgecolors='black')
